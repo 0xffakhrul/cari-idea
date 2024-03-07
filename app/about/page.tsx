@@ -1,10 +1,10 @@
 const Page = () => {
   return (
-    <div className="py-14 grid grid-cols-12">
-      <h2 className="col-span-3 text-5xl font-bold">
+    <div className="py-14 grid gap-6 md:grid-cols-12">
+      <h2 className="md:col-span-3 text-5xl font-bold">
         About <span className="text-slate-400">CariIdea</span>
       </h2>
-      <div className="col-span-9 space-y-8">
+      <div className="md:col-span-9 space-y-8">
         <p className="text-lg ">
           I conceived CariIdea out of sheer frustration with the constant
           struggle of finding creative inspiration. In a world flooded with
