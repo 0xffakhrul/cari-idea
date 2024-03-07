@@ -5,6 +5,7 @@ import { Navbar } from "./components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Footer } from "@/components/footer";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,6 +36,7 @@ export default function RootLayout({
               <Navbar />
             </header>
             {children}
+            <Toaster position="top-center" />
             <Footer />
           </ThemeProvider>
         </body>
