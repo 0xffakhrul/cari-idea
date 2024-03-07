@@ -11,3 +11,17 @@ export async function getIdea() {
     console.error(error);
   }
 }
+
+export async function getIdeaById(id: string) {
+  try {
+    const idea = await db.idea.findUnique({
+      where: {
+        id: id,
+      },
+    });
+
+    return idea;
+  } catch (error) {
+    console.error(error);
+  }
+}
