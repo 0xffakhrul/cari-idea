@@ -40,12 +40,11 @@ const Page = () => {
   return (
     <div className="pt-10">
       <Link href={"/"} className="flex items-center pb-8 gap-3">
-        {" "}
         <ArrowLeft />
         Back
       </Link>
       <p className="text-4xl font-bold tracking-wide pb-6">
-        Have an awesome idea? Let's hear it!
+        Have an awesome idea? Let&apos;s hear it!
       </p>
       <Form {...form}>
         <form
@@ -80,10 +79,6 @@ const Page = () => {
               <FormItem>
                 <FormLabel>Description</FormLabel>
                 <FormControl>
-                  {/* <Input
-                    placeholder="A list of best Nasi Kandar places around Malaysia."
-                    {...field}
-                  /> */}
                   <Textarea
                     placeholder="A list of best Nasi Kandar places around Malaysia."
                     {...field}
