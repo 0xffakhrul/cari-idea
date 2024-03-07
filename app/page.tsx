@@ -1,21 +1,23 @@
 import { db } from "@/lib/db";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Card from "@/components/card";
+import Link from "next/link";
+import { getIdea } from "@/actions/get-idea";
 
 export default async function Home() {
-  const ideas = await db.idea.findMany();
+  const ideas = await getIdea();
   return (
-    <main className="min-h-screen ">
+    <main className="min-h-screen flex flex-col">
       <div className="pt-20  space-y-12">
-        <p className="text-xl text-center md:text-6xl font-bold ">
+        <p className="text-4xl text-center md:text-6xl font-bold ">
           Assorted ideas for the technicals.
         </p>
-        <p className="max-w-3xl text-center mx-auto text-2xl font-medium text-slate-300 text-opacity-70 leading-relaxed">
+        <p className="max-w-3xl text-center mx-auto text-lg md:text-2xl font-medium text-slate-300 text-opacity-70 leading-relaxed">
           Explore curated and handpicked goodies that enhance your workflow and
           cultivate your growth as a developer and designer.
         </p>
-        <div className="grid grid-cols-3 gap-6">
-          {ideas.map((idea) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pb-16">
+          {ideas?.map((idea) => (
             <Card
               key={idea.id}
               id={idea.id}
@@ -26,9 +28,7 @@ export default async function Home() {
               lastName={idea?.lastName}
               email={idea?.email}
               image={idea?.image}
-            >
-              {/* Additional child components if needed */}
-            </Card>
+            ></Card>
           ))}
         </div>
       </div>
