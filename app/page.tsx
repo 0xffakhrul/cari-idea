@@ -14,8 +14,8 @@ export default async function Home() {
           Assorted ideas for the technicals.
         </p>
         <p className="max-w-3xl text-center mx-auto text-lg md:text-2xl font-medium text-slate-300 text-opacity-70 leading-relaxed">
-          Explore curated and handpicked goodies that enhance your workflow and
-          cultivate your growth as a developer and designer.
+          Got a tech concept? Developers are ready to bring it to life. Join our
+          community and turn ideas into reality.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pb-16">
           {ideas?.map((idea) => (
