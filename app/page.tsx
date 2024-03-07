@@ -3,6 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Card from "@/components/card";
 import Link from "next/link";
 import { getIdea } from "@/actions/get-idea";
+import Image from "next/image";
 
 export default async function Home() {
   const ideas = await getIdea();
