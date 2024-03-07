@@ -17,6 +17,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { toast } from "react-hot-toast";
 
 const formSchema = z.object({
   title: z.string().min(1, {
@@ -35,6 +36,7 @@ const Page = () => {
       description: "",
     },
   });
+
   return (
     <div className="pt-10">
       <Link href={"/"} className="flex items-center pb-8 gap-3">
@@ -46,7 +48,18 @@ const Page = () => {
         Have an awesome idea? Let's hear it!
       </p>
       <Form {...form}>
-        <form action={create} className="space-y-8">
+        <form
+          action={async (formData: FormData) => {
+            const idea = await create(formData);
+            if (idea?.error) {
+              toast.error(idea.error);
+            } else {
+              toast.success("Idea created!");
+              form.reset();
+            }
+          }}
+          className="space-y-8"
+        >
           <FormField
             control={form.control}
             name="title"
